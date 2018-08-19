@@ -1,0 +1,84 @@
+{
+    "id": "bcd6b047-1852-4ba2-9596-a14874709abb",
+    "name": "TerraformWrapper",
+    "friendlyName": "Terraform Deployment Wrapper",
+    "description": "Allows deploying infrastructure using terraform, created by HashiCorp. This extensions allows the following. \n 1. download terraform to the agent. \n 2. Execute a series of terraform commands. \n 3. capture the output of terraform in a VSTS task variable for use in subsequent tasks. \n\n The end result should be the ability to ensure infrastructure is setup before deploying software to that infrastructure. ",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Andrew Poland",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Terraform $(commands)",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "samplepathinput",
+            "type": "filePath",
+            "label": "Sample Path",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "A sample path which is relative to root of repo if empty"
+        },
+        {
+            "name": "samplestring",
+            "type": "string",
+            "label": "Sample String",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "A sample string"
+        },
+        {
+            "name": "samplebool",
+            "type": "boolean",
+            "label": "Sample Boolean",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "If this is true, this task will fail if any errors are written to the StandardError stream.",
+            "groupName": "advanced"
+        },
+        {
+            "name": "commands",
+            "type": "multiLine",
+            "label": "Sample multiLine",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "advanced"
+        },
+        {
+            "name": "samplepickList",
+            "type": "pickList",
+            "label": "Sample pickList",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "advanced"
+        },
+        {
+            "name": "sampleRadio",
+            "type": "radio",
+            "label": "Sample radio",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "",
+            "groupName": "advanced"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}

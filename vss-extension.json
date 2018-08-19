@@ -1,0 +1,32 @@
+{
+    "manifestVersion": 1,
+    "id": "AndrewPoland",
+    "publisher": "AndrewPoland",
+    "version": "1.0.2",
+    "name": "My First Extension",
+    "description": "A sample Visual Studio Services extension",
+    "public": false,
+    "categories": ["Build and release"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+      {
+           "id": "terrafrom-wrapper",
+           "type": "ms.vss-distributed-task.task",
+           "targets": [
+               "ms.vss-distributed-task.tasks"
+           ],
+           "properties": {
+               "name": "buildAndReleaseTask"
+           }
+       }
+    ],
+    "files": [
+        {
+            "path": "buildAndReleaseTask"
+        }
+    ]
+}
