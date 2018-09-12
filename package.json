@@ -1,23 +1,25 @@
 {
-  "name": "VSTSExtensionBase",
+  "name": "terraform-toolbox",
   "version": "1.0.0",
-  "description": "Sample project to get a feel of what's required for a VSTS build extension. Intent is to treat this as a base for any extension ideas I have. Will most likely tend towards a node.js implementation? since that seemed tidier than powershell.",
+  "description": "A series of tasks which allow running terraform by hashicorp. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrewPoland/VSTSExtensionBase.git"
+    "url": "git+https://github.com/andrewPoland/terraform-toolbox.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andrewPoland/VSTSExtensionBase/issues"
+    "url": "https://github.com/andrewPoland/terraform-toolbox/issues"
   },
-  "homepage": "https://github.com/andrewPoland/VSTSExtensionBase#readme",
+  "homepage": "https://github.com/andrewPoland/terraform-toolbox#readme",
   "dependencies": {
-    "vss-web-extension-sdk": "^5.134.0"
+    "vsts-task-lib": "2.6.0",
+    "typed-rest-client": "0.12.0",
+    "q": "1.5.0"
   }
 }

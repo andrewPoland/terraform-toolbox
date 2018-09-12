@@ -1,8 +1,8 @@
 {
     "id": "bcd6b047-1852-4ba2-9596-a14874709abb",
-    "name": "TerraformWrapper",
-    "friendlyName": "Terraform Deployment Wrapper",
-    "description": "Allows deploying infrastructure using terraform, created by HashiCorp. This extensions allows the following. \n 1. download terraform to the agent. \n 2. Execute a series of terraform commands. \n 3. capture the output of terraform in a VSTS task variable for use in subsequent tasks. \n\n The end result should be the ability to ensure infrastructure is setup before deploying software to that infrastructure. ",
+    "name": "Terraform-Toolbox download",
+    "friendlyName": "Terraform Toolbox download",
+    "description": "downloads terraform, created by HashiCorp.",
     "helpMarkDown": "",
     "category": "Utility",
     "visibility": [
@@ -78,7 +78,7 @@
     ],
     "execution": {
         "Node": {
-            "target": "index.js"
+            "target": "terraform-download.js"
         }
     }
 }

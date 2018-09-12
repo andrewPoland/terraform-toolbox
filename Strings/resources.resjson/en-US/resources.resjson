@@ -1,0 +1,11 @@
+{
+  "loc.friendlyName": "Terraform Toolbox",
+  "loc.description": "toolbox containing a series of tasks to allow executing terraform commands.",
+  "loc.input.label.Directory": "Terraform Directory",
+  "loc.input.help.Directory": "Provide a directory which will be where terraform.exe will be extracted to. it is advised to use a VSTS variable here to allow re-use",
+  "loc.input.label.Version": "Terraform Version",
+  "loc.input.help.Version": "The version of terraform to download. This list is manually populated, if you require an older version please raise an issue.",
+  "loc.input.values.Version": [ "0.11.8" ],
+  "loc.messages.InvalidFileExtension": "Download link has an invalid extension, expected: %s but found: %s.",
+  "loc.message.ExtractionFailed": "Failed to extract file. path: %s. reason: %s"
+}
