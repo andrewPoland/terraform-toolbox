@@ -22,58 +22,22 @@
             "isExpanded": false
         }
     ],
-    "inputs": [
+    "inputs": [       
         {
-            "name": "samplepathinput",
-            "type": "filePath",
-            "label": "Sample Path",
-            "defaultValue": "",
-            "required": true,
-            "helpMarkDown": "A sample path which is relative to root of repo if empty"
-        },
-        {
-            "name": "samplestring",
+            "name": "TerraformDirectory",
             "type": "string",
             "label": "Sample String",
             "defaultValue": "",
             "required": false,
             "helpMarkDown": "A sample string"
-        },
+        }, 
         {
-            "name": "samplebool",
-            "type": "boolean",
-            "label": "Sample Boolean",
-            "defaultValue": "false",
+            "name": "TerraformVersion",
+            "type": "string",
+            "label": "Sample String",
+            "defaultValue": "0.11.10",
             "required": false,
-            "helpMarkDown": "If this is true, this task will fail if any errors are written to the StandardError stream.",
-            "groupName": "advanced"
-        },
-        {
-            "name": "commands",
-            "type": "multiLine",
-            "label": "Sample multiLine",
-            "defaultValue": "",
-            "required": false,
-            "helpMarkDown": "",
-            "groupName": "advanced"
-        },
-        {
-            "name": "samplepickList",
-            "type": "pickList",
-            "label": "Sample pickList",
-            "defaultValue": "",
-            "required": false,
-            "helpMarkDown": "",
-            "groupName": "advanced"
-        },
-        {
-            "name": "sampleRadio",
-            "type": "radio",
-            "label": "Sample radio",
-            "defaultValue": "false",
-            "required": false,
-            "helpMarkDown": "",
-            "groupName": "advanced"
+            "helpMarkDown": "A sample string"
         }
     ],
     "execution": {

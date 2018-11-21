@@ -1,5 +1,5 @@
 # terraform-toolbox
-The goal of this project is to provide loosely coupled terraform vsts extensions. The idea is to provide each command independently to reduce the configuration size of each task. At the end a user should be able to deploy an environment and extract the terraform outputs to VSTS variables.
+The goal of this project is to provide loosely coupled terraform azure dev ops extensions. The idea is to provide each command independently to reduce the configuration size of each task. At the end a user should be able to deploy an environment and extract the terraform outputs to VSTS variables.
 
 Initially I plan to break the project down into the following tasks.
 
@@ -15,7 +15,7 @@ Since VSTS hosted agents do not contain the terraform executable the first step 
 
 I would advise using a VSTS variable to store the directory as this will be needed in subsequent steps.
 
-### Terraform Tooolbox - Init
+### Terraform Toolbox - Init
 Terraform Init <sup name="init-ref">[1](#init-footnote)</sup> allows a user to setup the working environment. This command is safe to run multiple times. If you are running on a hosted environment it might benefit you to run this command in a separate pipe to prevent redundant runs.
 
 *Inputs*:
@@ -51,9 +51,9 @@ Currently the plan command will output the plan to a local file called tfplan, y
 ### Terraform Toolbox - Apply
 Terraform apply <sup name="apply-ref">[3](#apply-footnote)</sup> applies the changes that were planned in the previous step. Since this is part of the automation pipeline it will be run with auto-approve, manual approval is expected to take place externally if required.
 
-Terraform apply results in outputs which are defined inside your terrafrom output file. These outputs can then be mapped to VSTS variables, this allows you to use these outputs when configuring your applications. E.g you might use terraform to setup a database and a website, you can then set the connection string in the website using the variable when you deploy it in a subsequent release step.
+Terraform apply results in outputs which are defined inside your terraform output file. These outputs can then be mapped to VSTS variables, this allows you to use these outputs when configuring your applications. E.g you might use terraform to setup a database and a website, you can then set the connection string in the website using the variable when you deploy it in a subsequent release step.
 
-The apply step can be configured via a configuration file or via inline variables. This is a decision that is left up to the user, personally I prefer to have a codebase which is environment independant and then deployment tool which contains all environment information.
+The apply step can be configured via a configuration file or via inline variables. This is a decision that is left up to the user, personally I prefer to have a codebase which is environment independent and then deployment tool which contains all environment information.
 
 I plan to make all output variables secret, while all outputs might not be secret, I think it would be safer making them secret to prevent accidents due to not being aware. If this is problematic raise an issue with reasoning and if it's good I'll make it match the terraform output visibility.  
 
@@ -69,7 +69,7 @@ I plan to make all output variables secret, while all outputs might not be secre
 
 
 ## Contributions
-At this point in time I'm going to control contribution strictly as I figure out how I'm going to setup the project, once this is done I'll update this with how you should go about contributing, specific styles that I want to keep consistant e.t.c. If there is a bug or a small feature that you wish to add feel free to create a pull request. I advise raising an issue before doing this, in case the feature doesn't fit within the scope of this project.
+At this point in time I'm going to control contribution strictly as I figure out how I'm going to setup the project, once this is done I'll update this with how you should go about contributing, specific styles that I want to keep consistent e.t.c. If there is a bug or a small feature that you wish to add feel free to create a pull request. I advise raising an issue before doing this, in case the feature doesn't fit within the scope of this project.
 
 ## Requests
 If there is a feature that you would like to request this can be done by creating an issue in github. I will then tag it as a feature-request. If I'm being too slow in implementing a feature that has been requested, feel free to review the contributions section above and create a pull request.
@@ -80,4 +80,6 @@ If there is a feature that you would like to request this can be done by creatin
 
 <b id="plan-footnote"> 2 </b> https://www.terraform.io/docs/commands/plan.html [↩](#plan-ref)
 
-<b id="plan-footnote"> 3 </b> https://www.terraform.io/docs/commands/apply.html [↩](#apply-ref)
+<b id="apply-footnote"> 3 </b> https://www.terraform.io/docs/commands/apply.html [↩](#apply-ref)
+
+<b id="vsts-doc-footnote"> 4 </b> https://docs.microsoft.com/en-us/azure/devops/extend/develop/add-build-task?view=vsts [↩](#vsts-doc-ref)
